@@ -11,20 +11,54 @@ body {
   font-family: sans-serif;
 }
 
-.plr1 {
+.names > span {
+  display: inline-block;
+  margin-right: 1em;
+  padding: 3px;
+}
+
+.target * {
+  background-color: white;
+  padding: 3px;
+}
+.target ul {
+  padding-left: 40px;
+}
+
+.target .plr1, .names .plr1 {
   background-color: red;
 }
 
-.plr2 {
+.target .plr2, .names .plr2 {
   background-color: yellow;
 }
 
-.plr3 {
+.target .plr3, .names .plr3 {
+  background-color: blue;
+}
+
+.target .plr1.plr2 {
+  background-color: orange;
+}
+.target .plr1.plr3 {
+  background-color: magenta;
+}
+
+.target .plr2.plr3 {
   background-color: green;
 }
 
-.plr1.plr2 {
-  background-color: orange;
+.target .plr1.plr2.plr3 {
+  background-color: black;
+  color: white;
+}
+
+.boxes > div {
+    float: left;
+    padding: 1em;
+    margin: 1em;
+    border: 1px solid black;
+    border-radius: 10px;
 }
 
     </style>
@@ -41,6 +75,6 @@ body {
       To begin the development, run `npm start` in this folder.
       To create a production bundle, use `npm run build`.
     -->
-    <script src="build/static/js/main.d8af2fbd.js"></script>
+    <script src="build/static/js/main.87d178d2.js"></script>
   </body>
 </html>

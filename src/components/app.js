@@ -15,16 +15,18 @@ firebase.initializeApp({
 
 let reducer = function(battle,action){
   battle = battle || {}
+  let {plr1,plr2,plr3,plr1sel,plr2sel,plr3sel} = battle
+  let {name,selector} = action
   switch(action.type){
-    case 'ENTER': return Object.assign({},battle,{
-      plr1: battle.plr1 || action.name,
-      plr2: battle.plr2 || battle.plr1 && action.name || '',
-      plr3: battle.plr3 || battle.plr2 && action.name || ''
+    case 'ENTER': return plr1 === name || plr2 === name || plr3 === name ? battle : Object.assign({},battle,{
+      plr1: plr1 || name,
+      plr2: plr2 || plr1 && name || '',
+      plr3: plr3 || plr2 && name || ''
     })
     case 'SETSELECTOR': return Object.assign({},battle,{
-      plr1sel: (action.name === battle.plr1 ? action.selector : battle.plr1sel || ''),
-      plr2sel: (action.name === battle.plr2 ? action.selector : battle.plr2sel || ''),
-      plr3sel: (action.name === battle.plr3 ? action.selector : battle.plr3sel || '')
+      plr1sel: (name === plr1 ? selector : plr1sel || ''),
+      plr2sel: (name === plr2 ? selector : plr2sel || ''),
+      plr3sel: (name === plr3 ? selector : plr3sel || '')
     })
   }
 }
@@ -39,8 +41,10 @@ const App = React.createClass({
   },
   enter(room,name){
     this.setState({room,name})
+    let loaded = false;
     firebase.database().ref('rooms/' + room).on('value',(snapshot)=>{
-      this.setState({battle:snapshot.val()})
+      this.setState({battle:Object.assign({},snapshot.val(),{loaded})})
+      loaded = true;
     })
     firebase.database().ref('rooms/' + room).transaction(current=>{
       return reducer(current,{name,type:'ENTER'})

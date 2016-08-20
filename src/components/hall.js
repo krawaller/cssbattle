@@ -1,18 +1,21 @@
 import React from 'react'
 
 let Hall = React.createClass({
-  enter(){
+  enter(e){
+    e.preventDefault()
     let room = this.refs.room.value
     let name = this.refs.name.value
-    this.props.enter(room,name)
+    if (room && name){
+      this.props.enter(room,name)
+    }
   },
   render(){
     return <div>
       <h4>Enter the arena</h4>
-      <div>
+      <form onSubmit={this.enter}>
         Enter room <input ref="room" required/> with name <input ref="name" required/>.
-        <button onClick={this.enter}>Go!</button>
-      </div>
+        <button type="submit">Go!</button>
+      </form>
     </div>
   }
 })
