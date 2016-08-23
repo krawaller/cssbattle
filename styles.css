@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.names > span {
+  display: inline-block;
+  margin-right: 1em;
+  padding: 3px;
+}
+
+.target * {
+  background-color: white;
+  padding: 3px;
+}
+.target ul {
+  padding-left: 40px;
+}
+
+.target .plr1, .names .plr1 {
+  background-color: red;
+}
+
+.target .plr2, .names .plr2 {
+  background-color: yellow;
+}
+
+.target .plr3, .names .plr3 {
+  background-color: blue;
+}
+
+.target .plr1.plr2 {
+  background-color: orange;
+}
+.target .plr1.plr3 {
+  background-color: magenta;
+}
+
+.target .plr2.plr3 {
+  background-color: green;
+}
+
+.target .plr1.plr2.plr3 {
+  background-color: black;
+  color: white;
+}
+
+.boxes > div {
+    float: left;
+    padding: 1em;
+    margin: 1em;
+    border: 1px solid black;
+    border-radius: 10px;
+}

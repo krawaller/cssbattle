@@ -7,9 +7,14 @@ const HTML = `
   <ul>
     <li>foo</li>
     <li>bar</li>
-    <li>baz<strong>booo</strong> bin!</li>
+    <li>baz <strong>booo</strong> bin!</li>
   </ul>
   <p>moo wee haha!</p>
+  <table>
+    <tr><th>Who</th><th>Constipation</th><th>Trepidation</th></tr>
+    <tr><td>Benke</td><td>10</td><td>18</td></tr>
+    <tr><td>Sture</td><td>1</td><td>7</td></tr>
+  </table>
   <p>gaa GAAH!</p>
 </div>
 `
