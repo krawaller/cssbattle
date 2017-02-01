@@ -10,7 +10,7 @@ const HTML = `
     <li>baz <strong>booo</strong> bin!</li>
   </ul>
   <p lang="madeup">moo wee haha!</p>
-  <table>
+  <table class="data">
     <thead>
       <tr><th>Who</th><th>Constipation</th><th>Trepidation</th></tr>
     </thead>
