@@ -43,8 +43,8 @@ const App = React.createClass({
     this.setState({room,name})
     let loaded = false;
     firebase.database().ref('rooms/' + room).on('value',(snapshot)=>{
-      this.setState({battle:Object.assign({},snapshot.val(),{loaded})})
       loaded = true;
+      this.setState({battle:Object.assign({},snapshot.val(),{loaded})})
     })
     firebase.database().ref('rooms/' + room).transaction(current=>{
       return reducer(current,{name,type:'ENTER'})

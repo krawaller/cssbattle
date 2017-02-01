@@ -3,19 +3,24 @@ import React from 'react'
 const HTML = `
 <div>
   <h2>The sorrows of our parents</h2>
-  <p>bla bla <strong>yada</strong> woo!</p>
+  <p lang="nonsense">bla bla <strong>yada</strong> woo!</p>
   <ul>
     <li>foo</li>
     <li>bar</li>
     <li>baz <strong>booo</strong> bin!</li>
   </ul>
-  <p>moo wee haha!</p>
+  <p lang="madeup">moo wee haha!</p>
   <table>
-    <tr><th>Who</th><th>Constipation</th><th>Trepidation</th></tr>
-    <tr><td>Benke</td><td>10</td><td>18</td></tr>
-    <tr><td>Sture</td><td>1</td><td>7</td></tr>
+    <thead>
+      <tr><th>Who</th><th>Constipation</th><th>Trepidation</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Benke</td><td>10</td><td>18</td></tr>
+      <tr><td>Sture</td><td>1</td><td>7</td></tr>
+    </tbody>
   </table>
-  <p>gaa GAAH!</p>
+  <p class="flavour">And so it begins</p>
+  <button>Cancel</button> <button disabled>Submit</button>
 </div>
 `
 
@@ -36,7 +41,7 @@ let Battle = React.createClass({
           try{
             let matches = this.refs.html.querySelectorAll(sel)
             matches.forEach(el=>el.classList.add(plrClass))
-            count[n] = matches.length
+            //count[n] = matches.length
             console.log("applied",sel,"for",plrClass,this.refs.html.querySelectorAll(sel))
           } catch(e) {
             console.log("Whaaa, faulty selectors?!",sel)
