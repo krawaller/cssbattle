@@ -1,7 +1,7 @@
 import React from 'react'
 
 const HTML = `
-<div>
+<div lang="en">
   <h2>The sorrows of our parents</h2>
   <p lang="nonsense">bla bla <strong>yada</strong> woo!</p>
   <ul>
